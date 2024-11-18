@@ -13,7 +13,7 @@ class Restaurant(models.Model):
     address = models.TextField()
     phone_number = models.CharField(max_length=15)
     cover_photo = models.ImageField(upload_to='restaurant_covers/')
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='restaurants')
 
     def __str__(self):
         return self.name
